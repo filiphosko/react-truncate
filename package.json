@@ -8,7 +8,7 @@
     "lib"
   ],
   "scripts": {
-    "compile": "shx mkdir -p lib && babel ./src --out-file ./lib/Truncate.js && cross-env BABEL_ENV=CommonJS babel ./src --out-file ./lib/Truncate.CommonJS.js",
+    "compile": "shx mkdir -p lib && node_modules/.bin/babel ./src --out-file ./lib/Truncate.js && BABEL_ENV=CommonJS node_modules/.bin/babel ./src --out-file ./lib/Truncate.CommonJS.js",
     "coverage": "nyc npm test && nyc report --reporter=text-lcov",
     "lint": "eslint .",
     "prepublish": "shx rm -rf ./lib && npm run compile",
